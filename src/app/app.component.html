@@ -1,0 +1,136 @@
+<header class="p-3 mb-2 bg-warning text-white">
+  <strong>STUDENT TASk</strong>
+</header>
+
+ <div class="container mt-4" id="std">
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="fname">fname</label>
+        <input
+        #fname
+        type="text"
+        class="form-control"
+        id="fname"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="lname">lname</label>
+        <input
+        #lname
+        type="text"
+        class="form-control"
+        id="lname"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">email</label>
+        <input
+        #email
+        type="text"
+        class="form-control"
+        id="email"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="contact">contact</label>
+        <input 
+        #contact
+        type="text"
+        class="form-control"
+        id="contact"
+        >
+      </div>
+
+      <!-- <button
+      (click)="onAdd()"
+       class="btn btn-sm btn-outline-primary btn-block"> Add student</button> -->
+    
+
+       <button
+      (click)="onadd1(fname,lname,email,contact)"
+       class="btn btn-sm btn-outline-primary btn-block"> Add student</button>
+    
+
+    </div>
+
+
+
+    <div class="col-md-8">
+      <div class="table-responsive">
+        <table class="table table-bordered ">
+          <thead class="thead-dark">
+            <tr>
+              <th>Sr no</th>
+              <th>frist Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+  
+          <tbody class="thead-light">
+            <tr 
+            *ngFor="let std of stdArr;let i=index">
+              <td>{{i+1}}</td>
+              <td>{{std.fname}}</td>
+              <td>{{std.lname}}</td>
+              <td>{{std.email}}</td>
+              <td>{{std.contact}}</td>
+            </tr>
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+
+  </div>
+ </div>
+
+<hr>
+
+<header class="p-3 mb-2 bg-success text-white">
+  <strong>TODO TASk</strong>
+
+</header>
+
+ <div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 mt-4">
+      
+      <div class="form-group">
+        <label for="todo">todo</label>
+        <input 
+       
+        #todo
+        type="text"
+        class="form-control"
+        id="todoitem"
+        >
+      </div>
+      
+
+      <button 
+      (click)="ontodo()"
+      class="btn btn-sm btn-outline-primary btn-block">
+    Add todo </button>
+      
+
+    </div>
+
+
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li 
+        *ngFor="let todo of todoArr"
+        class="list-group-item list-group-item-action list-group-item-dark">i love {{todo}} 
+       </li>
+      </ul>
+
+    </div>
+  </div>
+ </div>
